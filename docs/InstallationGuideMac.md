@@ -4,8 +4,8 @@
 2. Homebrew
 3. Git
 4. Node.js and NPM Packages
-5. Visual Studio Code (Recommended) and Plugins
-6. Chrome or Firefox (Recommended)
+5. Visual Studio Code (Recommended) and Extensions
+6. Chrome (Recommended) or Firefox and Extensions
 7. Slack
 
 We are going to install software over the command line, so before starting, open your terminal window. (You can open it by pressing `command+space` and searching for _terminal_).
@@ -54,7 +54,7 @@ When it's finished, type `git --version` to confirm that it has installed.
 
 Node.js is a JavaScript runtime engine. Basically, it allows you to run JavaScript programs outside of the browser.
 
-You will need to have the latest _Current_ version of Node installed as of September 2019 (12.10). If you already have Node.js installed, type `node -v`. If you do not have the latest version, see https://flaviocopes.com/how-to-update-node/ for instructions on how to upgrade.
+You will need to have the latest _LTS_ version of Node installed as of January 2020 (12.14). If you already have Node.js installed, type `node -v`. If you do not have the 12.14 version, see https://flaviocopes.com/how-to-update-node/ for instructions on how to upgrade.
 
 You should also update NPM. You can update it with:
 
@@ -65,7 +65,7 @@ npm install -g npm@latest
 If you do not have Node.js installed, type this is your terminal:
 
 ```bash
-brew install node
+brew install node@12
 ```
 
 When it’s finished, type `node -v` to confirm that it has installed.
@@ -74,15 +74,24 @@ When it’s finished, type `node -v` to confirm that it has installed.
 
 ESLint is a linter, meaning that it will point out potential errors while you are typing in a code editor like Visual Studio Code, Atom or Sublime.
 
-To install ESLint, type:
+To install ESLint and its React plugin, type:
 
 ```bash
 npm install -g eslint
+npm install -g eslint-plugin-react
 ```
 
 When it’s finished, type `eslint -v` in your terminal to confirm it has installed.
 
-## Visual Studio Code (Recommended) and Plugins
+### Yarn
+
+Moving forward, we are going to use yarn instead of npm to manage and install packages. (Yarn is perferred by the React community). Install yarn with:
+
+```bash
+npm install -g yarn
+```
+
+## Visual Studio Code (Recommended) and Extensions
 
 Visual Studio Code is an IDE, which is an intelligent code editor. We will be teaching with Visual Studio Code and highly recommend that you use it too. If you are experienced with programming and command line, and you believe that you can translate whatever we teach you in Visual Studio Code to your editor of choice, you may opt for another editor, but we will not be able to help you if problems arise.
 
@@ -131,7 +140,7 @@ If Quokka prompts you to go Pro, select _'Community' features only_.
 
 ### Prettier Extension (Optional)
 
-Prettier automatically formats your code and you can configure it to format your code whenever you save a file. Using this is optional for now but we will require it for our final group project.
+Prettier automatically formats your code and you can configure it to format your code whenever you save a file. Using this is optional for now but we will require it for group projects.
 
 If you would like to use prettier, search for _Prettier_ in the Extensions tab on the left and install _Prettier - Code formatter_. Once its installed, click on _Reload_ if necessary.
 
@@ -147,13 +156,15 @@ Paste the following into the JSON file. Do not overwrite any settings that you a
   "editor.tabSize": 2,
 ```
 
-## Chrome or Firefox (Recommended)
+## Chrome (Recommended) or Firefox and Extensions
 
-You should use any modern browser that has good Developer Tools available. (In other words, not Internet Explorer). We recommend Chrome because we will be demostrating Chrome's tools in class, or Firefox:
+You are required to use Chrome or Firefox because the React and Redux extensions for debugging your code are only available for these browsers. We recommend Chrome because we will be demostrating Chrome's tools in class, but you are free to download any of following:
 
-- [Chrome](https://www.google.com/chrome/)
-- [FirefoxDeveloperEdition](https://www.mozilla.org/en-US/firefox/developer/)
-- [Firefox](https://www.mozilla.org/en-US/firefox/)
+- [Chrome](https://www.google.com/chrome/) & [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+- [FirefoxDeveloperEdition](https://www.mozilla.org/en-US/firefox/developer/) & [React Developer Tools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+- [Firefox](https://www.mozilla.org/en-US/firefox/) & [React Developer Tools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+
+We will also ask you install the _React Developer Tools_ extension as well. See the links above.
 
 ## Slack
 
