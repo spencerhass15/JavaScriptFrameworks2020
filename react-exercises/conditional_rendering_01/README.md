@@ -25,8 +25,9 @@ The second prop will take ap rop named showCompleted and it will accept a boolea
 
 if the second prop is true, it will render the completed items in the todo list. If the prop is toggled to false, it will render all the todos that have not been completed.
 
-##DEMO
 ![](demo.gif)
+##DEMO
+
 
 
 
