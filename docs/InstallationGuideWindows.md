@@ -1,9 +1,9 @@
 # What You Will Be Installing - Windows
 
-1. Visual Studio Code (Recommended) and Plugins
+1. Visual Studio Code (Recommended) and Extensions
 2. Git for Windows
 3. Node.js and NPM Packages
-4. Chrome or Firefox (Recommended)
+4. Chrome (Recommended) or Firefox and Extensions
 5. Slack
 
 ## Visual Studio Code (Recommended)
@@ -50,7 +50,7 @@ When you finish installing, you should see Git Bash on your computer. Open it, t
 
 Node.js is a JavaScript runtime engine. Basically, it allows you to run JavaScript programs outside of the browser.
 
-You will need to have the latest _Current_ version of Node installed as of September 2019 (12.10). If you already have Node.js installed, type `node -v` in Git Bash. If you do not have the latest version, you will need to remove Node.js and reinstall it again.
+You will need to have the latest _LTS_ version of Node installed as of January 2020 (12.14). If you already have Node.js installed, type `node -v` in Git Bash. If you do not have the latest version, you will need to remove Node.js and reinstall it again.
 
 If Node.js is up-to-date, you should update NPM. You can update it with:
 
@@ -58,7 +58,7 @@ If Node.js is up-to-date, you should update NPM. You can update it with:
 npm install -g npm@latest
 ```
 
-To install Node.js, go to https://nodejs.org/en/ and click on the _12.10.X Current_ version.
+To install Node.js, go to https://nodejs.org/en/ and click on the _12.14.X LTS_ version.
 
 When it finishes downloading, open the downloaded file. Accept the License Agreement and all of the defaults. If you are asked to allow the app to make changes to your device, click on _Yes_.
 
@@ -68,15 +68,24 @@ When it’s finished installing, open Git Bash and type `node -v` to confirm tha
 
 ESLint is a linter, meaning that it will point out potential errors while you are typing in a code editor like Visual Studio Code, Atom or Sublime.
 
-To install ESLint, type this in Git Bash:
+To install ESLint and its React plugin, type:
 
 ```bash
 npm install -g eslint
+npm install -g eslint-plugin-react
 ```
 
-When it’s finished, type `eslint -v` to confirm that it has installed.
+When it’s finished, type `eslint -v` in your terminal to confirm it has installed.
 
-## Visual Studio Code Setup and Plugins
+### Yarn
+
+Moving forward, we are going to use yarn instead of npm to manage and install packages. (Yarn is perferred by the React community). Install yarn with:
+
+```bash
+npm install -g yarn
+```
+
+## Visual Studio Code Setup and Extensions
 
 ### Setting Git Bash as your Default Shell
 
@@ -126,13 +135,15 @@ Paste the following into the JSON file. Do not overwrite any settings that you a
   "editor.tabSize": 2,
 ```
 
-## Chrome or Firefox (Recommended)
+## Chrome (Recommended) or Firefox and Extensions
 
-You should use any modern browser that has good Developer Tools available. (In other words, not Internet Explorer). We recommend Chrome because we will be demostrating Chrome's tools in class, or Firefox:
+You are required to use Chrome or Firefox because the React and Redux extensions for debugging your code are only available for these browsers. We recommend Chrome because we will be demostrating Chrome's tools in class, but you are free to download any of following:
 
-- [Chrome](https://www.google.com/chrome/)
-- [FirefoxDeveloperEdition](https://www.mozilla.org/en-US/firefox/developer/)
-- [Firefox](https://www.mozilla.org/en-US/firefox/)
+- [Chrome](https://www.google.com/chrome/) & [React Developer Tools for Chrome](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+- [FirefoxDeveloperEdition](https://www.mozilla.org/en-US/firefox/developer/) & [React Developer Tools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+- [Firefox](https://www.mozilla.org/en-US/firefox/) & [React Developer Tools for Firefox](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+
+We will also ask you install the _React Developer Tools_ extension as well. See the links above.
 
 ## Slack
 
