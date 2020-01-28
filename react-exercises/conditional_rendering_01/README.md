@@ -21,7 +21,7 @@ export const todos = [
 ];
 ```
 The first prop will be named todos and it will accept an array of objects.
-The second prop will take ap rop named showCompleted and it will accept a boolean.
+The second prop will take a prop named showCompleted and it will accept a boolean.
 
 if the second prop is true, it will render the completed items in the todo list. If the prop is toggled to false, it will render all the todos that have not been completed.
 
