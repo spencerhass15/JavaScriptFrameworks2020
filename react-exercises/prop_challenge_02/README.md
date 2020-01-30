@@ -20,3 +20,7 @@ To achieve this, please use default props
 <Welcome name="Jamal" />
 <Welcome />
 ```
+
+### Example
+
+![](demo.png)
