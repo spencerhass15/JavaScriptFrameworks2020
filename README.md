@@ -1,22 +1,22 @@
-# JavaScript Fundamentals
+# JavaScript Frameworks
 
 **[AlbanyCanCode Course](https://albanycancode.org/)**
 
-**Winter 2020**
+**Spring 2020**
 
 This is the git repository for the class. It will be updated on a class by class basis.
 
 You will submit your assignments by doing pull requests. You will need to create a Github account if you do not have one already. Fork this repository by clicking on the _Fork_ button. Then clone your forked repository with this command, replacing YOUR-USERNAME with your Github username:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/JavaScriptFundamentals2020.git
+git clone https://github.com/AlbanyCanCodeCourses/JavaScriptFrameworks2020.git
 ```
 
 Add the original repository as a remote to your forked repository:
 
 ```bash
-cd JavaScript2020
-git remote add upstream https://github.com/AlbanyCanCodeCourses/JavaScriptFundamentals2020.git
+cd JavaScriptFrameworks2020
+git remote add upstream https://github.com/AlbanyCanCodeCourses/JavaScriptFrameworks2020.git
 git fetch upstream master
 ```
 
@@ -34,9 +34,8 @@ Follow the guide [Creating a pull request from a fork](https://help.github.com/a
 
 ## Resources
 
-- [Syllabus](https://docs.google.com/document/d/1x3Qeln21_8PWtiAf3aFKyUXlxgPz_TpDNgIy_yePPJQ/edit?usp=sharing)
-- Projects: [Project 1: Hangman](docs/Project1Description.md) | [Final Project](docs/FinalProjectDescription.md)
-- [Slides](https://slides.com/accjavascript/intro-to-react-044411#/)
+- [Syllabus]()
+- [Slides](https://slides.com/accjavascript/decks/2020-javascript-frameworks)
 - [Code Sandboxes](https://codesandbox.io/u/matinaspatsos)
 - Installation Guide: [Mac](docs/InstallationGuideMac.md) | [Windows](docs/InstallationGuideWindows.md)
 - [MDN](https://developer.mozilla.org/en-US/) (Unofficial JavaScript Manual)
