@@ -122,7 +122,7 @@ We will learn how JavaScript communicates with remote web servers via AJAX.
 ### Week 5
 
 Composition  
-We will teach you intermediate to advance techniques for componsing your application and sharing application state. We may cover:
+We will teach you intermediate to advance techniques for composing your application and sharing application state. We may cover:
 
 - Render props pattern
 - Context API
@@ -132,7 +132,7 @@ We will teach you intermediate to advance techniques for componsing your applica
 ### Week 6
 
 React Native  
-We will introduce to the world of mobile application development.
+We will introduce you to the world of mobile application development.
 
 ### Week 7 - 9
 
