@@ -34,7 +34,7 @@ Follow the guide [Creating a pull request from a fork](https://help.github.com/a
 
 ## Resources
 
-- [Syllabus]()
+- [Syllabus](docs/Syllabus.md)
 - [Slides](https://slides.com/accjavascript/decks/2020-javascript-frameworks)
 - [Code Sandboxes](https://codesandbox.io/u/matinaspatsos)
 - Installation Guide: [Mac](docs/InstallationGuideMac.md) | [Windows](docs/InstallationGuideWindows.md)
