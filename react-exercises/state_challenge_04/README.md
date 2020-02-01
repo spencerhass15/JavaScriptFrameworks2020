@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# State Challenge APP
 
-## Available Scripts
+### Reason for the challenge
 
-In the project directory, you can run:
+Managing state is often a source of heartache for many developers.
+In these next few challenges will help you improve your ability to manage your app's state.
 
-### `yarn start`
+### Developer Instructions
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Import the images from the image directory.
+2. Iterate over each image and render them to the screen.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Challenge 1
 
-### `yarn test`
+As a user, I would like to see the number of keystrokes a user types displayed on the screen
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Instructions:
 
-### `yarn build`
+1. Create a component named "WordLength" that requires no props.
+2. It will render an input field box that will capture user input
+3. It will then render the length of the input on the screen.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# ScreenShot
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![](challenge_01.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Challenge 2)
 
-### `yarn eject`
+As a developer, I would like a component that has the ability to truncate text.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Instructions:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1.  Create a component named LessText and it will accept two props.
+2.  The first prop will be named "text" and it will accept a string.
+3.  The second prop will be named "maxLength" and it will accept an integer.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Acceptance Criteria
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The component will have two buttons.
+The first button will say "Read More"
+The second button will say "Read Less"
 
-## Learn More
+The "Read More" button will display the entire text.
+The "Read Less" button will truncate the set by the "maxLength" prop.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![](challenge_02.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Challenge 3)
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- As a user, I would like to have an app that allows me to record my food purchases. The app should allow me to add grocery items to the list, update grocery items,
+- and remove them from the list.
+-
+- Developer acceptance criteria:
+- Create a component that accepts an array of objects.
+- foodItems: [
+  { food: 'Rice', cost: 100},
+  { food: 'Beans', cost: 200}
+  ]
+- The component will iterate over the items and show them to the user. Developer discretion on how the app is styled(you will not be graded on styles)
