@@ -24,7 +24,7 @@ As a user, I would like to see the number of keystrokes a user types displayed o
 
 ![](challenge_01.png)
 
-### Challenge 2)
+### Challenge 2 
 
 As a developer, I would like a component that has the ability to truncate text.
 
