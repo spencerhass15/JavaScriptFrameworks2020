@@ -43,7 +43,7 @@ The second button will say "Read Less"
 The "Read More" button will display the entire text.
 The "Read Less" button will truncate the set by the "maxLength" prop.
 
-![](challenge_02.png)
+![](challenge_02.gif)
 
 ### Challenge 3)
 
