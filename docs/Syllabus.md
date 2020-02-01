@@ -25,8 +25,8 @@ Schenectady, NY 12305
 
 Mondays and Wednesdays  
 5:45pm - 8:45pm  
-First day of class: 2/3/20  
-Last day of class: 4/22/2020
+First day of class: 2/3/2020  
+Last day of class: 4/22/2020 \*
 
 ### Final Project
 
