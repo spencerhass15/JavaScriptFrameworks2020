@@ -6,10 +6,10 @@
 
 This is the git repository for the class. It will be updated on a class by class basis.
 
-You will submit your assignments by doing pull requests. You will need to create a Github account if you do not have one already. Fork this repository by clicking on the _Fork_ button. Then clone your forked repository with this command, replacing YOUR-USERNAME with your Github username:
+You will submit your assignments by doing pull requests. You will need to create a Github account if you do not have one already. Fork this repository by clicking on the _Fork_ button. Then clone your forked repository with this command, replacing <YOUR-USERNAME> with your Github username:
 
 ```bash
-git clone https://github.com/AlbanyCanCodeCourses/JavaScriptFrameworks2020.git
+git clone https://github.com/<YOUR-USERNAME>/JavaScriptFrameworks2020.git
 ```
 
 Add the original repository as a remote to your forked repository:
@@ -17,7 +17,6 @@ Add the original repository as a remote to your forked repository:
 ```bash
 cd JavaScriptFrameworks2020
 git remote add upstream https://github.com/AlbanyCanCodeCourses/JavaScriptFrameworks2020.git
-git fetch upstream master
 ```
 
 At any point, if you see the message "Please tell me who you are" in your command line output, you will need to setup your command line to use your Github account. Follow the instruction underneath where it says "Run", replacing "youremail@example.com" and "Your Name" with your information.
