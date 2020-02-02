@@ -4,13 +4,9 @@ import "./App.css";
 const GroceryList = () => {
   const [groceryList, setGroceryList] = useState([]);
   const [groceryItem, setGroceryItem] = useState("");
-<<<<<<< HEAD
   const [cost, setCost] = useState();
   const [errorMessage, setErrorMessage] = useState(null);
   const [isError, setError] = useState(true);
-=======
-  const [cost, setCost] = useState("");
->>>>>>> 348a7dcf189000fe13f36733e880532d5ee3b61a
 
   const handleForm = e => {
     e.preventDefault();
@@ -76,13 +72,8 @@ const GroceryList = () => {
     const cost = groceryList.reduce((acc, item, index) => {
       return acc + parseFloat(item.cost);
     }, 0);
-<<<<<<< HEAD
 
     return cost;
-=======
-    console.log({ cost });
-    return cost.toFixed(2);
->>>>>>> 348a7dcf189000fe13f36733e880532d5ee3b61a
   };
   return (
     <div id="grocery-list-wrapper">
@@ -104,7 +95,6 @@ const GroceryList = () => {
             id="grocery-item-text"
             name="cost"
             value={cost}
-<<<<<<< HEAD
             placeholder="Cost of grocery Item..."
             onChange={e => setCost(parseInt(e.target.value))}
           />
@@ -116,14 +106,6 @@ const GroceryList = () => {
                 clearForm();
               }}
             >
-=======
-            placeholder="Cost of grocery item..."
-            onChange={e => setCost(e.target.value)}
-          />
-          <div className="button-container">
-            <button type="submit">Add</button>
-            <button type="button" onClick={clearForm}>
->>>>>>> 348a7dcf189000fe13f36733e880532d5ee3b61a
               Clear List
             </button>
           </div>
@@ -134,11 +116,7 @@ const GroceryList = () => {
         </div>
       </div>
       <div>
-<<<<<<< HEAD
         <h2>Total Cost:{groceryList.length > 0 && renderTotalCost()}</h2>
-=======
-        <h2>Total Cost: ${renderTotalCost()}</h2>
->>>>>>> 348a7dcf189000fe13f36733e880532d5ee3b61a
       </div>
     </div>
   );
