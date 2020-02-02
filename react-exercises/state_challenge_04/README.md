@@ -47,7 +47,7 @@ The "Read Less" button will truncate the set by the "maxLength" prop.
 
 ### Challenge 3
 
-<<<<<<< HEAD
+
 ## As a user, I would like to have an app that allows me to record my food purchases. The app should allow me to add grocery items to the list, update grocery items, and remove them from the list.
 
 # Acceptance criteria:
@@ -59,12 +59,5 @@ The "Read Less" button will truncate the set by the "maxLength" prop.
 5. I should be able to clear list by pressing a button.
 
 ![](challenge_03.gif)
-=======
-- As a user, I would like to have an app that allows me to record my food purchases. The app should allow me to add grocery items to the list, update grocery items, and remove them from the list.
 
-Developer acceptance criteria:
 
-- Create a component that accepts an array of objects.
-- foodItems: `[ { food: 'Rice', cost: 100}, { food: 'Beans', cost: 200} ]`
-- The component will iterate over the items and show them to the user. Developer discretion on how the app is styled(you will not be graded on styles)
->>>>>>> 348a7dcf189000fe13f36733e880532d5ee3b61a
