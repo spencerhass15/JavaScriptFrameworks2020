@@ -4,20 +4,30 @@ import "./App.css";
 const GroceryList = () => {
   const [groceryList, setGroceryList] = useState([]);
   const [groceryItem, setGroceryItem] = useState("");
-  const [cost, setCost] = useState(0);
+  const [cost, setCost] = useState();
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [isError, setError] = useState(true);
 
   const handleForm = e => {
     e.preventDefault();
-    const newArr = [...groceryList];
-    newArr.push({ cost, groceryItem });
-    setGroceryList(newArr);
-    setCost("");
-    setGroceryItem("");
+
+    console.log({ errorMessage });
+    if (!isError) {
+      console.log({ errorMessage });
+      const newArr = [...groceryList];
+      newArr.push({ cost, groceryItem });
+      setGroceryList(newArr);
+      setCost("");
+      setGroceryItem("");
+    } else {
+      alert(errorMessage);
+    }
   };
+
   const clearForm = () => {
     setGroceryList("");
     setGroceryItem("");
-    setCost(0);
+    setCost("");
   };
   const removeGroceryItem = itemIndex => {
     const updatedGroceryList = groceryList.filter((_, index) => {
@@ -25,6 +35,7 @@ const GroceryList = () => {
     });
     setGroceryList(updatedGroceryList);
   };
+
   const renderGroceryList = () => {
     console.log(groceryList);
     return (
@@ -43,11 +54,25 @@ const GroceryList = () => {
     );
   };
 
+  const validateForm = () => {
+    console.log({ groceryItem });
+    if (groceryItem.length === 0) {
+      setErrorMessage("Please add a grocery Item");
+      setError(true);
+    } else if (typeof cost !== "number") {
+      setErrorMessage("Please add the cost of the item");
+      setError(true);
+    } else {
+      setErrorMessage(null);
+      setError(false);
+    }
+  };
+
   const renderTotalCost = () => {
     const cost = groceryList.reduce((acc, item, index) => {
       return acc + parseInt(item.cost);
     }, 0);
-    console.log({ cost });
+
     return cost;
   };
   return (
@@ -69,10 +94,10 @@ const GroceryList = () => {
             name="cost"
             value={cost}
             placeholder="Cost of grocery Item..."
-            onChange={e => setCost(e.target.value)}
+            onChange={e => setCost(parseInt(e.target.value))}
           />
           <div className="button-container">
-            <button>Add</button>
+            <button onClick={validateForm}>Add</button>
             <button
               onClick={e => {
                 e.preventDefault();
@@ -89,7 +114,7 @@ const GroceryList = () => {
         </div>
       </div>
       <div>
-        <h2>Total Cost:{renderTotalCost()}</h2>
+        <h2>Total Cost:{groceryList.length > 0 && renderTotalCost()}</h2>
       </div>
     </div>
   );
