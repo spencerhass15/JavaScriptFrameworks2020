@@ -24,7 +24,7 @@ As a user, I would like to see the number of keystrokes a user types displayed o
 
 ![](challenge_01.png)
 
-### Challenge 2 
+### Challenge 2
 
 As a developer, I would like a component that has the ability to truncate text.
 
@@ -45,15 +45,12 @@ The "Read Less" button will truncate the set by the "maxLength" prop.
 
 ![](challenge_02.gif)
 
-### Challenge 3)
+### Challenge 3
 
-- As a user, I would like to have an app that allows me to record my food purchases. The app should allow me to add grocery items to the list, update grocery items,
-- and remove them from the list.
--
-- Developer acceptance criteria:
+- As a user, I would like to have an app that allows me to record my food purchases. The app should allow me to add grocery items to the list, update grocery items, and remove them from the list.
+
+Developer acceptance criteria:
+
 - Create a component that accepts an array of objects.
-- foodItems: [
-  { food: 'Rice', cost: 100},
-  { food: 'Beans', cost: 200}
-  ]
+- foodItems: `[ { food: 'Rice', cost: 100}, { food: 'Beans', cost: 200} ]`
 - The component will iterate over the items and show them to the user. Developer discretion on how the app is styled(you will not be graded on styles)

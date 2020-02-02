@@ -27,14 +27,14 @@ input[type="submit"] {
   margin-right: 5px;
 }
 
-input[type="text"] {
+input {
   padding: 7px;
   width: 370px;
   margin-right: 5px;
 }
 
-input[type="text"]:focus {
-  border: none;
+input:focus {
+  border-color: transparent;
   -moz-box-shadow: 0 0 5px rgba(8, 146, 208, 2);
   -webkit-box-shadow: 0 0 5px rgba(8, 146, 208, 2);
   box-shadow: 0 0 5px rgba(8, 146, 208, 2);
@@ -95,5 +95,22 @@ ul {
 
 .item-container {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.item-container > * {
+  flex: 1 0 33.333%;
+}
+.item-container > *:first-child {
+  text-align: left;
+}
+.item-container > *:last-child {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
 }

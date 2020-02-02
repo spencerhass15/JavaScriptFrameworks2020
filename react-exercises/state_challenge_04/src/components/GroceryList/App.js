@@ -4,7 +4,7 @@ import "./App.css";
 const GroceryList = () => {
   const [groceryList, setGroceryList] = useState([]);
   const [groceryItem, setGroceryItem] = useState("");
-  const [cost, setCost] = useState(0);
+  const [cost, setCost] = useState("");
 
   const handleForm = e => {
     e.preventDefault();
@@ -15,9 +15,9 @@ const GroceryList = () => {
     setGroceryItem("");
   };
   const clearForm = () => {
-    setGroceryList("");
+    setGroceryList([]);
     setGroceryItem("");
-    setCost(0);
+    setCost("");
   };
   const removeGroceryItem = itemIndex => {
     const updatedGroceryList = groceryList.filter((_, index) => {
@@ -34,8 +34,8 @@ const GroceryList = () => {
           <div key={index}>
             <li className={"item-container"}>
               <div>{item.groceryItem}</div>
-              <div>{item.cost}</div>
-              <div onClick={() => removeGroceryItem(index)}>X</div>
+              <div>${parseFloat(item.cost).toFixed(2)}</div>
+              <div onClick={() => removeGroceryItem(index)}>&times;</div>
             </li>
           </div>
         );
@@ -45,10 +45,10 @@ const GroceryList = () => {
 
   const renderTotalCost = () => {
     const cost = groceryList.reduce((acc, item, index) => {
-      return acc + parseInt(item.cost);
+      return acc + parseFloat(item.cost);
     }, 0);
     console.log({ cost });
-    return cost;
+    return cost.toFixed(2);
   };
   return (
     <div id="grocery-list-wrapper">
@@ -59,26 +59,23 @@ const GroceryList = () => {
             type="text"
             id="grocery-item-text"
             name="grocery-item"
-            placeholder="Add a Grocery Item..."
+            placeholder="Add a grocery item..."
             onChange={e => setGroceryItem(e.target.value)}
             value={groceryItem}
           />
           <input
-            type="text"
+            type="number"
+            min="0"
+            step=".01"
             id="grocery-item-text"
             name="cost"
             value={cost}
-            placeholder="Cost of grocery Item..."
+            placeholder="Cost of grocery item..."
             onChange={e => setCost(e.target.value)}
           />
           <div className="button-container">
-            <button>Add</button>
-            <button
-              onClick={e => {
-                e.preventDefault();
-                clearForm();
-              }}
-            >
+            <button type="submit">Add</button>
+            <button type="button" onClick={clearForm}>
               Clear List
             </button>
           </div>
@@ -89,7 +86,7 @@ const GroceryList = () => {
         </div>
       </div>
       <div>
-        <h2>Total Cost:{renderTotalCost()}</h2>
+        <h2>Total Cost: ${renderTotalCost()}</h2>
       </div>
     </div>
   );
