@@ -29,3 +29,7 @@ Styling is not important in this challenge, but using the [.map function](https:
 ## Example
 
 ![](demo.png)
+
+### LINK TO SLIDE
+
+[Looping Through Arrays in JSX](https://slides.com/accjavascript/intro-to-react-044411#/12)

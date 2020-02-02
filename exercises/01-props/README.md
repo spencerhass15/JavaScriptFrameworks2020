@@ -39,3 +39,7 @@ To achieve this, please use default props
 ### Example
 
 ![](demo.png)
+
+### SLIDE
+
+[Default Props](https://slides.com/accjavascript/intro-to-react-044411#/28)
