@@ -397,3 +397,4 @@ $RECYCLE.BIN/
 *NOCOMMIT*
 # Usually, you would commit the package-lock.json. But for purposes of our class, it would be a mess.
 package-lock.json
+yarn.lock
