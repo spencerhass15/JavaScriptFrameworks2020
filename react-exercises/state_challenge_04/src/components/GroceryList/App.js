@@ -96,7 +96,7 @@ const GroceryList = () => {
             name="cost"
             value={cost}
             placeholder="Cost of grocery Item..."
-            onChange={e => setCost(parseInt(e.target.value))}
+            onChange={e => setCost(parseFloat(e.target.value))}
           />
           <div className="button-container">
             <button onClick={validateForm}>Add</button>
