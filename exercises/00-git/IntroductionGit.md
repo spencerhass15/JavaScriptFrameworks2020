@@ -5,6 +5,7 @@
 
 # Students
 
+- Roberto Morado
 - Elijah Brown
 - Dave Knussman
 - Patrick Cullen
