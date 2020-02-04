@@ -5,4 +5,5 @@
 
 # Students
 
+- Brian Ha
 -Herbie Rodriguez
