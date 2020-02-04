@@ -4,5 +4,3 @@
 - Matina Patsos
 
 # Students
-
-- John Doe
