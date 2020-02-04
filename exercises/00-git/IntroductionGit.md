@@ -5,6 +5,7 @@
 
 # Students
 
+- Elijah Brown
 - Dave Knussman
 - Patrick Cullen
 - Spencer Hass
