@@ -5,6 +5,7 @@
 
 # Students
 
+- Spencer Hass
 - Alyssa Bell
 - Brian Ha
 - Herbie Rodriguez
