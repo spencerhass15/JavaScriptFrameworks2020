@@ -5,5 +5,6 @@
 
 # Students
 
+- Alyssa Bell
 - Brian Ha
--Herbie Rodriguez
+- Herbie Rodriguez
