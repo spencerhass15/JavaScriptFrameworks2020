@@ -5,6 +5,7 @@
 
 # Students
 
+- Dave Knussman
 - Patrick Cullen
 - Spencer Hass
 - Alyssa Bell
