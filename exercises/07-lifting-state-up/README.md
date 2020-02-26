@@ -9,6 +9,17 @@ When you "lift state up", you create a two-way data flow:
 - The parent component will pass down state and state updater callback functions as props to the children.
 - The children components will then invoke the updater functions they get from their parent when they need to change their parent's state.
 
+## Getting Started
+
+Using your command line, you will need to navigate to the this folder, install all dependencies, and start the app.
+
+```bash
+cd exercises/07-lifting-state-up/
+code . # if you would like to open this in a separate VSCode window
+yarn install
+yarn start
+```
+
 ## Challenge 1 - Temperature
 
 ### User Stories
