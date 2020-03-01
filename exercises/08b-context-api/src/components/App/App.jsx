@@ -1,13 +1,10 @@
 // Import what you need from React here
 import React from "react";
+// You will need to import the "TranslatorContext" from src/contexts/TranslatorContext.js
 import "./App.css";
 import NavBar from "../NavBar/NavBar";
 import CreateAccount from "../CreateAccount/CreateAccount";
 import Footer from "../Footer/Footer";
-
-/**
- * "TranslatorContext" could go here or you could make it a separate component and then import it.
- */
 
 function App() {
   /**
@@ -29,4 +26,3 @@ function App() {
 }
 
 export default App;
-// If you declared "TranslatorContext" in this file, you will need to export it.

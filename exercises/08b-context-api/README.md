@@ -10,8 +10,8 @@ In most real world scenarios, React applications have a hierarchy of components.
 
 Here are some examples of using the Context API across multiple files and components:
 
-- [Initializing the Context API in the top-level ("App") component](https://codesandbox.io/s/406y2lqyl9?fontsize=14&hidenavigation=1&theme=dark)
-- [Initializing the Context API in its own component](https://codesandbox.io/s/usecontext-v36ew?fontsize=14&hidenavigation=1&theme=dark)
+- https://codesandbox.io/s/xmo1j8l5z?fontsize=14&hidenavigation=1&theme=dark
+- https://codesandbox.io/s/usecontext-v36ew?fontsize=14&hidenavigation=1&theme=dark
 
 ## Getting Started
 
@@ -42,16 +42,12 @@ Note that you do not need to make the forms functional.
 
 ## Instructions
 
-You will be storing the application's language locale ("en" or "es") and the callback to update the language (e.g. "setLanguage") within of the Context API. You will need to import and initialize the Context API with `createContext()`:
+You will be storing the application's language locale ("en" or "es") and the callback to update the language (e.g. "setLanguage") within the Context API.
 
-```javascript
-const TranslatorContext = createContext();
-```
+Take a look at _src/contexts/TranslatorContext.js_. (You will not need to modify anything inside of this file). This initializes "TranslatorContext" with `createContext()`. Every file that makes use of the Context API will need to import "TranslatorContext" from this file.
 
-One suggestion is to create a new component where you can initialize `createContext()`. Alternatively, you can call upon `createContext()` within _src/components/App/App.jsx_. You will need to export "TranslatorContext".
-
-Inside of _src/components/App/App.jsx_, initialize state and set up the "TranslatorContext" Provider.
+Initialize state and set up the "TranslatorContext" Provider within _src/components/App/App.jsx_.
 
 Open _src/components/CreateAccount/CreateAccount.jsx_. You will need to use `useContext()` to get the current language locale ("en" or "es") and the list of translations for the current language. Repeat for _src/components/Footer/Footer.jsx_ and _src/components/Login/Login.jsx_.
 
-The component "Languages" inside of _src/components/Languages/Languages.jsx_ has the buttons that the user can click on to change the current language. You will need to call upon `useContext()`. You will also need to attach an event handlers to the buttons that will update the language.
+The component "Languages" contains the buttons that, when clicked, will change the current language. Inside of _src/components/Languages/Languages.jsx_, you will need `useContext()`. You will also need to attach event handlers to the buttons that will update the language.

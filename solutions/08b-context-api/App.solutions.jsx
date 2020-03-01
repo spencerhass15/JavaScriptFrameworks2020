@@ -1,17 +1,15 @@
 /**
- * I'm importing useState() and createContext().
+ * I'm importing useState()
  */
-import React, { useState, createContext } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import NavBar from "../NavBar/NavBar";
 import CreateAccount from "../CreateAccount/CreateAccount";
 import Footer from "../Footer/Footer";
-
 /**
- * I'm initializing the Context API here.
- * Alternatively, I could create a separate component and then import it.
+ * I'm importing "TranslatorContext", which is what initializes the Context API
  */
-const TranslatorContext = createContext();
+import TranslatorContext from "../../contexts/TranslatorContext";
 
 function App() {
   const [language, setLanguage] = useState("en");
@@ -35,4 +33,3 @@ function App() {
 }
 
 export default App;
-export { TranslatorContext }; // Exporting so other components can use the Context API.

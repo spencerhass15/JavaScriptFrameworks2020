@@ -1,8 +1,8 @@
 /**
- * I'm importing useContext from React.
+ * I'm importing useContext() from React and "TranslatorContext"
  */
 import React, { useContext } from "react";
-import { TranslatorContext } from "../App/App";
+import TranslatorContext from "../../contexts/TranslatorContext";
 
 function Language() {
   /**

@@ -1,10 +1,9 @@
 /**
- * I'm importing useContext() from React and "TranslatorContext",
- * which I declared in App.jsx.
+ * I'm importing useContext() from React and "TranslatorContext"
  */
 import React, { useContext } from "react";
 import Languages from "../Languages/Languages";
-import { TranslatorContext } from "../App/App";
+import TranslatorContext from "../../contexts/TranslatorContext";
 import translations from "./FooterTranslations.json";
 
 function Footer() {
