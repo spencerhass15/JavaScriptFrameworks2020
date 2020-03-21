@@ -7,6 +7,7 @@ const JWT_SECRET = "TODO";
 const USER_ID = "1234";
 const USERNAME = "username";
 const PASSWORD = "password";
+const UUID = "341a2be5-9a98-4f08-8ac9-affd5c5cd1b0";
 
 const fakeUsers = require("./fakeUsers.json");
 
@@ -41,7 +42,7 @@ const methodNotAllowedError = (req, res) => {
 };
 
 app
-  .route("/login")
+  .route(["/token/login", "/cookie/login"])
   .post((req, res) => {
     const { username = undefined, password = undefined } = req.body;
 
@@ -53,11 +54,18 @@ app
     }
 
     if (username === USERNAME && password === PASSWORD) {
-      const token = jwt.sign({ sub: USER_ID.toString() }, JWT_SECRET);
-      return res.status(200).send({
-        message: "You did it! Success!",
-        token
-      });
+      if (req.originalUrl === "/token/login") {
+        const token = jwt.sign({ sub: USER_ID.toString() }, JWT_SECRET);
+        return res.status(200).send({
+          message: "You did it! Success!",
+          token
+        });
+      } else if (req.originalUrl === "/cookie/login") {
+        return res.status(200).send({
+          message: "You did it! Success!",
+          uuid: UUID
+        });
+      }
     }
 
     return res.status(401).send({
@@ -67,7 +75,7 @@ app
   .all(methodNotAllowedError);
 
 app
-  .route("/users")
+  .route("/token/users")
   .get((req, res) => {
     try {
       const { authorization } = req.headers;
@@ -80,6 +88,23 @@ app
       return res.status(403).send({
         message:
           "Forbidden. This means you are either missing your JWT token or your token is not correct. Setup a header called 'Authorization' and set the value equal to 'Bearer mytoken'."
+      });
+    }
+
+    return res.send(fakeUsers);
+  })
+  .all(methodNotAllowedError);
+
+app
+  .route("/cookie/users")
+  .get((req, res) => {
+    try {
+      const { id } = req.query;
+      if (id !== UUID) throw new Error("UnauthorizedError");
+    } catch (err) {
+      return res.status(403).send({
+        message:
+          "Forbidden. This means you are either missing the UUID, the UUID is not being passed the right way or your UUID is not correct. Change your url so that it looks like this: 'http://localhost:7000/cookie/users?id=myuuid'."
       });
     }
 
