@@ -44,33 +44,36 @@ const methodNotAllowedError = (req, res) => {
 app
   .route(["/token/login", "/cookie/login"])
   .post((req, res) => {
-    const { username = undefined, password = undefined } = req.body;
+    // Slowing down so that you can see if the button has been disabled
+    setTimeout(() => {
+      const { username = undefined, password = undefined } = req.body;
 
-    if (!username || !password) {
-      return res.status(400).send({
-        message:
-          "Pst! You are missing something in your request. Do you have a 'Content-Type' header and is it 'application/json?' Are you sending JSON? Is the username and password a part of the request?"
-      });
-    }
-
-    if (username === USERNAME && password === PASSWORD) {
-      if (req.originalUrl === "/token/login") {
-        const token = jwt.sign({ sub: USER_ID.toString() }, JWT_SECRET);
-        return res.status(200).send({
-          message: "You did it! Success!",
-          token
-        });
-      } else if (req.originalUrl === "/cookie/login") {
-        return res.status(200).send({
-          message: "You did it! Success!",
-          uuid: UUID
+      if (!username || !password) {
+        return res.status(400).send({
+          message:
+            "Pst! You are missing something in your request. Do you have a 'Content-Type' header and is it 'application/json?' Are you sending JSON? Is the username and password a part of the request?"
         });
       }
-    }
 
-    return res.status(401).send({
-      message: "Unauthorized. Your username or password is incorrect."
-    });
+      if (username === USERNAME && password === PASSWORD) {
+        if (req.originalUrl === "/token/login") {
+          const token = jwt.sign({ sub: USER_ID.toString() }, JWT_SECRET);
+          return res.status(200).send({
+            message: "You did it! Success!",
+            token
+          });
+        } else if (req.originalUrl === "/cookie/login") {
+          return res.status(200).send({
+            message: "You did it! Success!",
+            uuid: UUID
+          });
+        }
+      }
+
+      return res.status(401).send({
+        message: "Unauthorized. Your username or password is incorrect."
+      });
+    }, 500);
   })
   .all(methodNotAllowedError);
 
