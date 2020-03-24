@@ -10,6 +10,7 @@ const PASSWORD = "password";
 const UUID = "341a2be5-9a98-4f08-8ac9-affd5c5cd1b0";
 
 const fakeUsers = require("./fakeUsers.json");
+const movies = require("./movies.json");
 
 const app = express();
 
@@ -78,7 +79,7 @@ app
   .all(methodNotAllowedError);
 
 app
-  .route("/token/users")
+  .route(["/token/users", "/token/movies"])
   .get((req, res) => {
     try {
       const { authorization } = req.headers;
@@ -94,12 +95,13 @@ app
       });
     }
 
-    return res.send(fakeUsers);
+    const content = req.originalUrl === "/token/movies" ? movies : fakeUsers;
+    return res.send(content);
   })
   .all(methodNotAllowedError);
 
 app
-  .route("/cookie/users")
+  .route(["/cookie/users", "/cookie/movies"])
   .get((req, res) => {
     try {
       const { id } = req.query;
@@ -111,7 +113,10 @@ app
       });
     }
 
-    return res.send(fakeUsers);
+    const content = RegExp(/^\/cookie\/movies/).test(req.originalUrl)
+      ? movies
+      : fakeUsers;
+    return res.send(content);
   })
   .all(methodNotAllowedError);
 
