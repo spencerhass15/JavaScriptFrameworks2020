@@ -1,5 +1,5 @@
 {
-  "name": "11a-authentication",
+  "name": "11a-authentication-local-storage",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
