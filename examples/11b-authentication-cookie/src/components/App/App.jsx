@@ -1,15 +1,9 @@
 import React, { useState } from "react";
+import Cookies from "js-cookie"; // Importing library to make cookie management easier
+import LoggedInContent from "../LoggedInContent/LoggedInContent";
 import axios from "axios";
 
-/**
- * Handles logging in, logging out, and storing the authentication token.
- * @param {Object} props children will contain the content that can only be seen if the user has logged in.
- * @example
- * {
- *    children: <LoggedInContent />
- * }
- */
-function LoginHandler(props) {
+function App() {
   /**
    * User input
    */
@@ -23,17 +17,17 @@ function LoginHandler(props) {
   const [errorMessage, setErrorMessage] = useState("");
 
   /**
-   * When a user is logged in, a token is stored in local storage and "isLoggedIn" is true.
-   * `localStorage.getItem("token")` is equal to the token
-   * `!!localStorage.getItem("token")` casts the starting value as a boolean, forcing "isLoggedIn" to be either true or false.
+   * When a user is logged in, a token is stored in a cookie and "isLoggedIn" is true.
+   * `Cookies.get("token"` is equal to the token
+   * `!!Cookies.get("token"` casts the starting value as a boolean, forcing "isLoggedIn" to be either true or false.
    */
-  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
+  const [isLoggedIn, setIsLoggedIn] = useState(!!Cookies.get("token"));
   const login = token => {
     /**
      * When the user refreshed the page or closes the tab, the logged in state is lost. They will have to login again.
-     * To prevents this, I am storing the token in local storage, which will still be there when the user refreshes or reopens the application.
+     * To prevents this, I am storing the token in a cookie, which will still be there when the user refreshes or reopens the application.
      */
-    localStorage.setItem("token", token);
+    Cookies.set("token", token);
     /**
      * Setting in state so that I can force this component to rerender and show the logged in user content.
      */
@@ -46,10 +40,10 @@ function LoginHandler(props) {
     setErrorMessage("");
   };
   /**
-   * Logs a user out by deleting the token in local storage and setting the "isLoggedIn" to false.
+   * Logs a user out by deleting the token cookie and setting the "isLoggedIn" to false.
    */
   const logout = () => {
-    localStorage.removeItem("token");
+    Cookies.remove("token");
     setIsLoggedIn(false);
   };
 
@@ -58,7 +52,7 @@ function LoginHandler(props) {
     setIsLoading(true);
     setErrorMessage("");
 
-    axios("http://localhost:7000/token/login", {
+    axios("http://localhost:7000/cookie/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -68,7 +62,7 @@ function LoginHandler(props) {
         password
       }
     })
-      .then(resp => login(resp.data.token))
+      .then(resp => login(resp.data.uuid)) // The UUID is a type of token that is used in this example
       .catch(err => {
         console.error(err);
         if (!err.response || !err.response.data || !err.response.data.message)
@@ -78,18 +72,8 @@ function LoginHandler(props) {
       .then(() => setIsLoading(false));
   };
 
-  /**
-   * Renders the main content, which is <LoggedInContent /> being passed down from props.
-   */
   if (isLoggedIn) {
-    /**
-     * I am wanting to return "props.children", but React won't let me because "props.children" is an object, and React won't let me return an object.
-     * I get the error "Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object."
-     * Using "cloneElement" from React to get around this.
-     * @see https://reactjs.org/docs/react-api.html#cloneelement
-     * I'm also passing the logout function down as props.
-     */
-    return React.cloneElement(props.children, { logout });
+    return <LoggedInContent logout={logout} />;
   } else {
     /**
      * If the user hasn't logged in yet, this renders a login form.
@@ -149,4 +133,4 @@ function LoginHandler(props) {
   }
 }
 
-export default LoginHandler;
+export default App;
