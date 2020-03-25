@@ -1,9 +1,11 @@
 // Import what you need from React
-import React from "react";
+import React, { useContext } from "react";
 import translations from "./CreateAccountTranslations.json";
-// Import "TranslatorContext"
+import { TranslatorContext } from "../../contexts/TranslatorContext";
 
 function CreateAccount() {
+  const [language, setLanguage, name] = useContext(TranslatorContext);
+  console.log({ TranslatorContext })
   /**
    * You will need to add something here. This component should be similar to the "CreateAccount" component in the first context API exercise.
    * @see exercises/08a-context-api/src/App.jsx
@@ -13,7 +15,8 @@ function CreateAccount() {
   /**
    * Replace "en" with a constant or variable.
    */
-  const t = translations["en"];
+  const t = translations[language];
+  console.log(name);
 
   /**
    * You do not have to change anything below this line.
@@ -69,12 +72,12 @@ function CreateAccount() {
           <small>
             {
               t[
-                "By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time."
+              "By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time."
               ]
             }
           </small>
         </p>
-        <button type="submit" className="btn btn-lg btn-success">
+        <button type="submit" className="btn btn-lg btn-success" onClick={() => setLanguage("en")}>
           {t["Sign Up"]}
         </button>
       </form>

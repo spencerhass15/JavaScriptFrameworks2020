@@ -1,9 +1,10 @@
 import React from "react";
-// import something
+import Gallery from "./Components/Gallery";
+import images from "./images/images";
 import "./App.css";
 
 function App() {
-  return <div className="App">{/* complete me */}</div>;
+  return <div><Gallery /></div>;
 }
 
 export default App;

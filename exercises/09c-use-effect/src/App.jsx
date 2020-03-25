@@ -1,35 +1,82 @@
-// import useEffect
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./App.css";
-// import Axios (or use Fetch)
 
 function App() {
   /**
-   * Set up state and make AJAX requests here
+   * allCharacters
+   * @type {Array} array of objects, where each object represents a different character.
+   * @example
+   * [
+   *    { id: 15, name: "Alien Rick", ... },
+   *    { id: 16, name: "Amish Cyborg", ... },
+   * ]
    */
+  const [allCharacters, setAllCharacters] = useState([]);
+  /**
+   * image
+   * @type {string} url for the character's image
+   */
+  const [image, setImage] = useState(
+    "https://i.ytimg.com/vi/UFFi9PWKDjg/maxresdefault.jpg"
+  );
+  /**
+   * name
+   * @type {string} name of the character
+   */
+  const [name, setName] = useState("");
+  /**
+   * Gets all characters when the component first renders,
+   * and only when the component first renders.
+   */
+  useEffect(() => {
+    (async () => {
+      const response = await axios(
+        /**
+         * @see https://rickandmortyapi.com/documentation/#get-all-characters
+         */
+        "https://rickandmortyapi.com/api/character/"
+      );
+      setAllCharacters(response.data.results);
+    })();
+  }, []);
+  /**
+   * Does a request to look up more information on the character,
+   * and then sets the chosen character's name and image.
+   * @param {string|number} characterId
+   */
+  const getCharacter = async characterId => {
+    const response = await axios(
+      /**
+       * @see https://rickandmortyapi.com/documentation/#get-a-single-character
+       */
+      `https://rickandmortyapi.com/api/character/${characterId}`
+    );
+    setImage(response.data.image);
+    setName(response.data.name);
+  };
 
   return (
     <div className="container">
       <div className="row text-center" id="body">
-        <h1 id="title-head">{/* Plugin character name here */}</h1>
+        <h1 id="title-head">{name}</h1>
         <div id="main-img">
           <a href="http://rickandmorty.wikia.com/wiki/Rick_Sanchez">
-            <img
-              alt={/* Plugin character name here */}
-              src={/* Plugin character image here */}
-              height="250"
-            />
+            <img alt={name} src={image} height="250" />
           </a>
           <div className="linkfooter">
             <p>Select your favorite character</p>
-            {/* Handle event here */}
-            <select id="dropdown" type="text">
+            <select
+              id="dropdown"
+              type="text"
+              onChange={e => getCharacter(e.target.value)}
+            >
               <option></option>
-              {/**
-               * Loop through all characters. The value should be the character id.
-               * @example in HTML
-               * <option value="2" key="character-1">Morty Smith</option>
-               */}
+              {allCharacters.map(character => (
+                <option value={character.id} key={character.id}>
+                  {character.name}
+                </option>
+              ))}
             </select>
           </div>
         </div>
