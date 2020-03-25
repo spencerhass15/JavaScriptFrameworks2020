@@ -20,7 +20,7 @@ function LoggedInContent({ logout }) {
      * NOTE it isn't best practice to get the token like this in every React component. We will show you a better way with the Context API and protected routes.
      */
     const token = localStorage.getItem("token");
-    axios("http://localhost:7000/token/users", {
+    axios("http://localhost:7000/jwt/users", {
       method: "GET",
       headers: {
         /**

@@ -18,14 +18,14 @@ After running the server on your machine, you will be greeted with a message You
 
 The API is a REST based API. You must use Axios or FETCH with stand-alone promises or async and await.
 
-| Route                              | METHOD |                                      Response |
-| ---------------------------------- | :----: | --------------------------------------------: |
-| http://localhost:7000/token/login  |  POST  | Status 200 (Success) Status 401(Unauthorized) |
-| http://localhost:7000/token/movies |  GET   | Status 200 (Success) Status 403(Unauthorized) |
+| Route                            | METHOD |                                     cdResponse |
+| -------------------------------- | :----: | ---------------------------------------------: |
+| http://localhost:7000/jwt/login  |  POST  | Status 200 (Success) Status 401 (Unauthorized) |
+| http://localhost:7000/jwt/movies |  GET   |    Status 200 (Success) Status 403 (Forbidden) |
 
 ## Server JSON Response:
 
-On Success: http://localhost:7000/token/movies
+On Success: http://localhost:7000/jwt/movies
 
 ```JSON
 {
@@ -79,7 +79,7 @@ On Success: http://localhost:7000/token/movies
 ## Sample AJAX REQUEST FOR LOGIN
 
 ```JAVASCRIPT
-axios("http://localhost:7000/token/login", {
+axios("http://localhost:7000/jwt/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -93,7 +93,7 @@ axios("http://localhost:7000/token/login", {
 ### SAMPLE REQUEST FOR GETTING MOVIES:
 
 `````JAVASCRIPT
-  axios("http://localhost:7000/token/movies", {
+  axios("http://localhost:7000/jwt/movies", {
       method: "GET",
       headers: {
         // Passing to the token to the API here, where it is a header.

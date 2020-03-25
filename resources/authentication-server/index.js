@@ -43,7 +43,7 @@ const methodNotAllowedError = (req, res) => {
 };
 
 app
-  .route(["/token/login", "/cookie/login"])
+  .route(["/jwt/login", "/cookie/login"])
   .post((req, res) => {
     // Slowing down so that you can see if the button has been disabled
     setTimeout(() => {
@@ -57,7 +57,7 @@ app
       }
 
       if (username === USERNAME && password === PASSWORD) {
-        if (req.originalUrl === "/token/login") {
+        if (req.originalUrl === "/jwt/login") {
           const token = jwt.sign({ sub: USER_ID.toString() }, JWT_SECRET);
           return res.status(200).send({
             message: "You did it! Success!",
@@ -79,7 +79,7 @@ app
   .all(methodNotAllowedError);
 
 app
-  .route(["/token/users", "/token/movies"])
+  .route(["/jwt/users", "/jwt/movies"])
   .get((req, res) => {
     try {
       const { authorization } = req.headers;
@@ -95,7 +95,7 @@ app
       });
     }
 
-    const content = req.originalUrl === "/token/movies" ? movies : fakeUsers;
+    const content = req.originalUrl === "/jwt/movies" ? movies : fakeUsers;
     return res.send(content);
   })
   .all(methodNotAllowedError);

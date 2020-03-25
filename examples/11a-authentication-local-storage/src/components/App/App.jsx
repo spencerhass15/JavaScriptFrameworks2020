@@ -51,7 +51,7 @@ function App() {
     setIsLoading(true);
     setErrorMessage("");
 
-    axios("http://localhost:7000/token/login", {
+    axios("http://localhost:7000/jwt/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

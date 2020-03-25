@@ -6,7 +6,7 @@ function LoggedInContent(props) {
   const [errorMessage, setErrorMessage] = useState("");
 
   /**
-   * Make an AJAX request to http://localhost:7000/token/movies to get a list of movies.
+   * Make an AJAX request to http://localhost:7000/jwt/movies to get a list of movies.
    * Be sure to provide the token in the AJAX request.
    */
 

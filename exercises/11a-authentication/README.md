@@ -8,7 +8,7 @@ Many application need a user login or signin process of some kind. This challeng
 
 ### Examples and Documentation
 
-See [simple authentication with local storage](examples/11a-authentication-local-storage/README.md).
+See [simple authentication with local storage](../../examples/11a-authentication-local-storage/README.md).
 
 ## Getting Started
 
@@ -37,15 +37,16 @@ As a user, I expect to stay logged in when I refresh the page.
 As a user, I need to be able to logout.
 
 ![Login example](login-example.gif)
+
 NOTE that instead of users, you will be rendering a list of movies.
 
 ## Acceptance Criteria
 
-- After the user submits the login form, you must make an AJAX request to http://localhost:7000/token/login to login the user.
+- After the user submits the login form, you must make an AJAX request to http://localhost:7000/jwt/login to login the user.
 - If the user typed in an invalid username or password, you must display an error message telling them this.
-- You will be getting a token from http://localhost:7000/token/login API. You should store this in either local storage or within a secure cookie.
+- You will be getting a token from http://localhost:7000/jwt/login API. You should store this in either local storage or within a secure cookie.
 - Once the user has logged in, they should see a list of movies.
-- When the user refreshes the page, they should still be logged in. This means they should still be able to see a list of movies from the http://localhost:7000/token/movies API.
+- When the user refreshes the page, they should still be logged in. This means they should still be able to see a list of movies from the http://localhost:7000/jwt/movies API.
 - The user should be able to logout. After they logout, they should return to the login form.
 
 ## Instructions
@@ -54,7 +55,7 @@ Start with the instructions inside _src/components/App/App.jsx_ first, then move
 
 You will be making AJAX calls to:
 
-- http://localhost:7000/token/login
-- http://localhost:7000/token/movies
+- http://localhost:7000/jwt/login
+- http://localhost:7000/jwt/movies
 
 [Please refer to the server documentation for more information on how to make these request.](../../resources/authentication-server/README.md)
