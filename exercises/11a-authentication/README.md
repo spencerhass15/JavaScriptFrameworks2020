@@ -14,9 +14,9 @@ See [simple authentication with local storage](examples/11a-authentication-local
 
 You will need to have two terminal windows open and running at once. If you are using Visual Studio Code, you can click on the split-screen or plus icon in your terminal panel:
 
-![Split screen icon in Visual Studio code](../../resources/authenication-server/two-terminals.png)
+![Split screen icon in Visual Studio code](../../resources/authentication-server/two-terminals.png)
 
-In one terminal window, you will need to run the authentication server. Please follow the steps [in this README.md](../../resources/authenication-server/README.md) on how to install and start the authentication server.
+In one terminal window, you will need to run the authentication server. Please follow the steps [in this README.md](../../resources/authentication-server/README.md) on how to install and start the authentication server.
 
 In the other terminal window, you will need to navigate to the this folder, install all dependencies, and start this exercise.
 
@@ -50,11 +50,11 @@ NOTE that instead of users, you will be rendering a list of movies.
 
 ## Instructions
 
-Start with the insturctions inside _src/components/App/App.jsx_ first, then move on to _src/components/LoggedInContent/LoggedInContent.jsx_.
+Start with the instructions inside _src/components/App/App.jsx_ first, then move on to _src/components/LoggedInContent/LoggedInContent.jsx_.
 
 You will be making AJAX calls to:
 
 - http://localhost:7000/token/login
 - http://localhost:7000/token/movies
 
-[Please refer to the server documentation for more information on how to make these request.](../../resources/authenication-server/README.md)
+[Please refer to the server documentation for more information on how to make these request.](../../resources/authentication-server/README.md)
