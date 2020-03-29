@@ -49,7 +49,7 @@ function LoggedInContent({ logout }) {
       </div>
       <p>
         Notice that when you refresh the page, you are still logged in. That's
-        because the token is stored in local storage.
+        because the token is stored inside of a cookie.
       </p>
       {users.map(user => {
         const key = `user-${user.id}`;
