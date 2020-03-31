@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import LoggedInContent from "../LoggedInContent/LoggedInContent";
 import axios from "axios";
-
+import Cookies from "js-cookie";
 function App() {
   /**
    * User input
@@ -25,40 +25,49 @@ function App() {
 
 
   const logout = () => {
-    localStorage.removeItem("token");
+    Cookies.remove("token");
     SetIsUserLoggedIn(false);
   };
 
 
 
   const [isUserLoggedIn, SetIsUserLoggedIn] = useState(
-    !!localStorage.getItem("token")
+    !!Cookies.get("token")
   );
 
   const login = token => {
-    localStorage.setItem("token", token);
+    Cookies.set("token", token, { expires: 1 });
     SetIsUserLoggedIn(true);
     setIsLoading(false);
   };
 
   const handleLoginRequest = e => {
-    e.preventDefault();
     setIsLoading(true);
-    axios("http://localhost:7000/", {
+    e.preventDefault();
+    // can we just add an s to http (https) to make it secure or is that
+    // something that is controlled server side?
+    axios("http://localhost:7000/jwt/login", {
       method: "POST",
+      headers: {
+
+        "Content-Type": "application/json"
+      },
       data: {
         username: username,
         password: password
       }
-    }).then(response => login(response.data.token))
+    })
+      .then(
+        response => login(response.data.token)
+      )
       .catch(err => {
         setErrorMessage(err.response.data.message);
-      });
+      })
+      .then(resp => setIsLoading(false));
   };
 
-
   if (isUserLoggedIn) {
-    return <LoggedInContent login={logout} />;
+    return <LoggedInContent logout={logout} />;
   }
   else
 
