@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import "./Likes.css";
+// Deleted Likes.css (Sorry, it shouldn't have been there)
 
 class Likes extends Component {
   state = {
@@ -11,7 +11,10 @@ class Likes extends Component {
    *
    */
 
-  like = () => this.setState({ likes: this.state.likes + 1 });
+  like = () => {
+    this.setState({ likes: this.state.likes + 1 });
+  };
+
   render() {
     /**
      * In the render function, add an onclick to the button to update the like count.
@@ -19,8 +22,9 @@ class Likes extends Component {
      */
     return (
       <div className="container mt-4 h1">
-        <h3>Likes</h3>
-        <button className="btn btn-primary" onClick={this.like}>{this.state.likes} Likes</button>
+        <button className="btn btn-light" onClick={this.like}>
+          {this.state.likes} Likes
+        </button>
       </div>
     );
   }

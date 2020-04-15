@@ -15,7 +15,7 @@ export const Routes = () => {
          * Using a protected route for the content that user needs to be logged in to see
          * @see examples/11c-authentication-routing/src/components/ProtectedRoute.js
          */}
-                <ProtectedRoute exact path="/Cookie/users" component={Users} />
+                <ProtectedRoute exact path="/cookie/users" component={Users} />
             </Switch>
         </CookieProvider>
     );
